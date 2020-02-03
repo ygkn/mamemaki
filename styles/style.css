@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+.mame-box {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes tame {
+  0% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.mame-box.tame {
+  animation: tame 0.2s alternate infinite;
+}
+
+.mame {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fedd7f;
+  bottom: 0;
+  left: 50%;
+  border-radius: 50%;
+  z-index: 2;
+  display: none;
+}
+
+@keyframes throw {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%)
+      translate(var(--target-x, 0), var(--target-y, 0));
+  }
+}
+
+.mame.throwing {
+  animation: throw 2s both;
+  display: block;
+}
+
+.result {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+  z-index: 1;
+  font-family: sans-serif;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.result.hit {
+  -webkit-text-stroke: red 0.03em;
+}
+.result.miss {
+  -webkit-text-stroke: blue 0.03em;
+}
+
+.result.show {
+  display: block;
+  animation: show 2s alternate both 2;
+}

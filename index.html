@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+    <title>自己紹介</title>
+  </head>
+
+  <body>
+    <b class="mame"></b>
+    <div class="result hit">
+      HIT
+    </div>
+    <div class="result miss">
+      MISS
+    </div>
+    <img src="./mame-box.png" alt="福豆" class="mame-box" />
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      <a-marker type="pattern" url="./pattern-oni-white.patt">
+        <a-image
+          width="4"
+          height="4"
+          position="0 0 0"
+          rotation="-90 0 0"
+          src="./oni.png"
+        ></a-image>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script src="./script/index.js"></script>
+  </body>
+</html>
