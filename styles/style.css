@@ -87,5 +87,5 @@ body {
 
 .result.show {
   display: block;
-  animation: show 2s alternate both 2;
+  animation: show 1s alternate both 2;
 }
